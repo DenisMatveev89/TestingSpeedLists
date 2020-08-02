@@ -207,41 +207,21 @@ namespace TestingSpeedLists
         // Удалить все элементы из массива, равные val.
         public void RemoveAll(int item) 
         {
-            for (int i = 0; i < _counter; i++)
+            if (item == _array[0])
+            {
+                RemoveFirst();
+            }
+            else if (item == _array[_counter - 1])
+            {
+                RemoveLast();
+            }
+            for (int i = 0; i < _counter - 1; i++)
             {
                 if (item == _array[i])
                 {
                     RemoveAt(i);
                 }
             }
-            /*bool result = Contains(item);
-            if (result == true) 
-            {
-                int d = _counter / 2;
-                while (d >= 1)
-                {
-                    for (int i = d; i < _counter; i++)
-                    {
-                        int j = i;
-                        while (item == _array[i])
-                        {
-                               RemoveAt(i);
-                                j = j - d;
-                      
-                        }
-                    }
-
-                    d = d / 2;
-                }
-                if (item == _array[0])
-                {
-                    RemoveAt(0);
-                }
-                if (item == _array[_counter])
-                {
-                    RemoveAt(_counter);
-                }
-            }  */
         }
         // Проверка, есть ли элемент в списке.
         public bool Contains(int item) 
