@@ -346,41 +346,50 @@ namespace TestingSpeedLists
             }
             return min;
         }
-        // Сортировка по возрастанию.
+        private void Swap(ref int a, ref int b)
+        {
+            int t = a;
+            a = b;
+            b = t;
+        }
+
+        // Сортировка по возрастанию (Алгоритм Шелла).
         public void Sort()
         {
-            int temp;
-            for (int i = 0; i < _counter - 1; i++)
+            int d = _counter / 2;
+            while (d >= 1)
             {
-                for (int j = i + 1; j < _counter; j++)
+                for (var i = d; i < _counter; i++)
                 {
-                    if (_array[i] > _array[j])
+                    var j = i;
+                    while ((j >= d) && (_array[j - d] > _array[j]))
                     {
-                        temp = _array[i];
-                        _array[i] = _array[j];
-                        _array[j] = temp;
+                        Swap(ref _array[j], ref _array[j - d]);
+                        j = j - d;
                     }
                 }
+
+                d = d / 2;
             }
         }
-      
-        // Сортировка по убыванию.
-        public void SortDesc() 
+        // Сортировка по убыванию (Алгоритм Шелла).
+        public void SortDesc()
         {
-            int temp;
-            for (int i = 0; i < _counter - 1; i++)
+            int d = _counter / 2;
+            while (d >= 1)
             {
-                for (int j = i + 1; j < _counter; j++)
+                for (var i = d; i < _counter; i++)
                 {
-                    if (_array[i] < _array[j])
+                    var j = i;
+                    while ((j >= d) && (_array[j - d] < _array[j]))
                     {
-                        temp = _array[i];
-                        _array[i] = _array[j];
-                        _array[j] = temp;
+                        Swap(ref _array[j], ref _array[j - d]);
+                        j = j - d;
                     }
                 }
-            }
 
+                d = d / 2;
+            }
         }
         // Вывод списка в консоль.
         public void PrintArrayList()
