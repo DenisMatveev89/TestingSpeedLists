@@ -346,11 +346,11 @@ namespace TestingSpeedLists
             }
             return min;
         }
-        private void Swap(ref int a, ref int b)
+        private void Swap(int a, int b)
         {
-            int t = a;
+            int temp = a;
             a = b;
-            b = t;
+            b = temp;
         }
 
         // Сортировка по возрастанию (Алгоритм Шелла).
@@ -359,12 +359,12 @@ namespace TestingSpeedLists
             int d = _counter / 2;
             while (d >= 1)
             {
-                for (var i = d; i < _counter; i++)
+                for (int i = d; i < _counter; i++)
                 {
-                    var j = i;
+                    int j = i;
                     while ((j >= d) && (_array[j - d] > _array[j]))
                     {
-                        Swap(ref _array[j], ref _array[j - d]);
+                        Swap(_array[j], _array[j - d]);
                         j = j - d;
                     }
                 }
@@ -378,12 +378,12 @@ namespace TestingSpeedLists
             int d = _counter / 2;
             while (d >= 1)
             {
-                for (var i = d; i < _counter; i++)
+                for (int i = d; i < _counter; i++)
                 {
-                    var j = i;
+                    int j = i;
                     while ((j >= d) && (_array[j - d] < _array[j]))
                     {
-                        Swap(ref _array[j], ref _array[j - d]);
+                        Swap(_array[j], _array[j - d]);
                         j = j - d;
                     }
                 }
