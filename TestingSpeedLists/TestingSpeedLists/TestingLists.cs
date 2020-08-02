@@ -575,7 +575,7 @@ namespace TestingSpeedLists
             sw.Stop();
             arrayRes[9, 8] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
-            Console.WriteLine("RemoveLast....................\t done");
+            Console.WriteLine("RemoveLast........................\t done");
         }
         public void RemoveAt(string[,] arrayRes, int[] array1, int[] array2, int[] array3)
         {
@@ -1562,13 +1562,13 @@ namespace TestingSpeedLists
             Console.WriteLine("ok...");
             Console.WriteLine("ArrayList sort FINISH...");
 
-            //Console.WriteLine("DoubleLinkedList 100 sort start...");
-            //sw.Start();
-            //dList1.Head = dList1.Sort(dList1.Head);
-            //sw.Stop();
-            //arrayRes[3, 24] = sw.Elapsed.TotalMilliseconds.ToString();
-            //sw.Reset();
-            //Console.WriteLine("ok...");
+            Console.WriteLine("DoubleLinkedList 100 sort start...");
+            sw.Start();
+            dList1.Head = dList1.Sort(dList1.Head);
+            sw.Stop();
+            arrayRes[3, 24] = sw.Elapsed.TotalMilliseconds.ToString();
+            sw.Reset();
+            Console.WriteLine("ok...");
             //Console.WriteLine("DoubleLinkedList 10 000 sort start...");
             //sw.Start();
             //dList2.Head = dList2.Sort(dList2.Head);
@@ -1585,14 +1585,14 @@ namespace TestingSpeedLists
             //Console.WriteLine("ok...");
             //Console.WriteLine("DoubleLinkedList sort FINISH...");
 
-            //Console.WriteLine("LinkedList sort start...");
-            //sw.Start();
-            //lList1.Head = lList1.Sort(lList1.Head);
-            //sw.Stop();
-            //arrayRes[2, 24] = sw.Elapsed.TotalMilliseconds.ToString();
-            //sw.Reset();
-            //Console.WriteLine("ok...");
-            //Console.WriteLine("LinkedList sort 100 ok...");
+            Console.WriteLine("LinkedList sort 100 start...");
+            sw.Start();
+            lList1.Head = lList1.Sort(lList1.Head);
+            sw.Stop();
+            arrayRes[2, 24] = sw.Elapsed.TotalMilliseconds.ToString();
+            sw.Reset();
+            Console.WriteLine("ok...");
+            //Console.WriteLine("LinkedList sort 10 000 start...");
             //sw.Start();
             //lList2.Head = lList2.Sort(lList2.Head);
             //sw.Stop();

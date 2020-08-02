@@ -193,17 +193,16 @@ namespace TestingSpeedLists
         // Удаление элемента из массива по индексу.
         public void RemoveAt(int index) 
         {
-
             if (index < _counter)
             {
                 _counter--;
 
                 ShiftLeft(_array, _array, index);
             }
-            else
-            {
-                Console.WriteLine($"\nИндекса {index} для удаления не существует в этом массиве");
-            }
+            //else
+            //{
+            //    Console.WriteLine($"\nИндекса {index} для удаления не существует в этом массиве");
+            //}
         }
         // Удалить все элементы из массива, равные val.
         public void RemoveAll(int item) 
@@ -215,6 +214,34 @@ namespace TestingSpeedLists
                     RemoveAt(i);
                 }
             }
+            /*bool result = Contains(item);
+            if (result == true) 
+            {
+                int d = _counter / 2;
+                while (d >= 1)
+                {
+                    for (int i = d; i < _counter; i++)
+                    {
+                        int j = i;
+                        while (item == _array[i])
+                        {
+                               RemoveAt(i);
+                                j = j - d;
+                      
+                        }
+                    }
+
+                    d = d / 2;
+                }
+                if (item == _array[0])
+                {
+                    RemoveAt(0);
+                }
+                if (item == _array[_counter])
+                {
+                    RemoveAt(_counter);
+                }
+            }  */
         }
         // Проверка, есть ли элемент в списке.
         public bool Contains(int item) 
