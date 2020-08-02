@@ -215,6 +215,13 @@ namespace TestingSpeedLists
             {
                 RemoveLast();
             }
+            //for (int i = 0; i < _counter-1; i++)
+            //{
+            //    if (item == _array[i])
+            //    {
+            //        RemoveAt(i);
+            //    }
+            //}
             for (int i = 0; i < _counter - 1; i++)
             {
                 if (item == _array[i])

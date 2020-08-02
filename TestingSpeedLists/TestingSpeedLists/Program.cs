@@ -64,7 +64,7 @@ namespace TestingSpeedLists
             test.RemoveLast(arrayRes, array1, array2, array3);
             test.RemoveAt(arrayRes, array1, array2, array3);
             test.RemoveAll(arrayRes, 12, array1, array2, array3);
-            test.Contains(arrayRes, 0, array1, array2, array3);
+            test.Contains(arrayRes, 12, array1, array2, array3);
             test.Get(arrayRes, 12, array1, array2, array3);
             test.GetFirst(arrayRes, array1, array2, array3);
             test.GetLast(arrayRes, array1, array2, array3);
