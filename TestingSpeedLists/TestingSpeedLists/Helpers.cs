@@ -7,8 +7,9 @@ namespace TestingSpeedLists
 {
     public class Helpers
     {
-        #region Допы
        
+        #region Допы
+
         // Рандом от и до.
         public int GetRnd(int minVal, int maxVal)
         {
@@ -46,17 +47,6 @@ namespace TestingSpeedLists
             }
             return array;
         }
-        private int[] Get100()
-        {
-            Random rnd = new Random();
-            int[] array1 = new int[100];
-            for (int i = 0; i < array1.Length; i++)
-            {
-                array1[i] = rnd.Next(0, 99);
-            }
-            return array1;
-        }
-
         // Вывод двухмерного массива в консоль.
         public void PrintTwoDArray(int[,] array)
         {

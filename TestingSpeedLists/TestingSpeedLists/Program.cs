@@ -12,7 +12,9 @@ namespace TestingSpeedLists
             int[] array1 = hp.GetArray(100, 0, 25);
             int[] array2 = hp.GetArray(100000, 0, 25);
             int[] array3 = hp.GetArray(1000000, 0, 25);
-
+            Console.WriteLine("\n*************************************************************************************************************************************************");
+            Console.WriteLine("Random lists creation - complete...");
+            Console.WriteLine("\n*************************************************************************************************************************************************");
             #region Табличка
             arrayRes[0, 1] = "AddFirst";
             arrayRes[0, 2] = "AddFirst[]";
@@ -61,7 +63,7 @@ namespace TestingSpeedLists
             test.RemoveFirst(arrayRes, array1, array2, array3);
             test.RemoveLast(arrayRes, array1, array2, array3);
             test.RemoveAt(arrayRes, array1, array2, array3);
-            test.RemoveAll(arrayRes, 21, array1, array2, array3);
+            //test.RemoveAll(arrayRes, 21, array1, array2, array3);
             test.Contains(arrayRes, 0, array1, array2, array3);
             test.Get(arrayRes, 12, array1, array2, array3);
             test.GetFirst(arrayRes, array1, array2, array3);
@@ -73,10 +75,9 @@ namespace TestingSpeedLists
             test.Max(arrayRes, array1, array2, array3);
             test.Min(arrayRes, array1, array2, array3);
             test.Set(arrayRes, array1, array2, array3);
-            //test.Reverse(arrayRes, array1, array2, array3);
-            //test.ToArray(arrayRes, array1, array2, array3);
-            //test.Sort(arrayRes, array1, array2, array3);
-
+            test.Reverse(arrayRes, array1, array2, array3);
+            test.ToArray(arrayRes, array1, array2, array3);
+            test.Sort(arrayRes, array1, array2, array3);
 
             for (int i = 0; i < arrayRes.GetLength(1); i++)
             {
@@ -91,9 +92,6 @@ namespace TestingSpeedLists
                 Console.WriteLine();
             }
 
-
-            Console.WriteLine("\n*************************************************************************************************************************************************");
-            Console.WriteLine("Lists created - Finish...");
         }
     }
 }
