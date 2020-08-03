@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace TestingSpeedLists
@@ -207,28 +208,27 @@ namespace TestingSpeedLists
         // Удалить все элементы из массива, равные val.
         public void RemoveAll(int item) 
         {
-            if (item == _array[0])
-            {
-                RemoveFirst();
-            }
-            else if (item == _array[_counter - 1])
-            {
-                RemoveLast();
-            }
-            //for (int i = 0; i < _counter-1; i++)
-            //{
-            //    if (item == _array[i])
-            //    {
-            //        RemoveAt(i);
-            //    }
-            //}
-            for (int i = 0; i < _counter - 1; i++)
+            int j = 0;
+            int count = 0;
+            for (int i = 0; i < _counter; i++)
             {
                 if (item == _array[i])
                 {
-                    RemoveAt(i);
+                    j++;
                 }
             }
+            int[] newArray = new int[_counter - j];
+            int q = 0;
+            for (int i = 0; i < _counter; i++)
+            {
+                if (item != _array[i])
+                {
+                    newArray[q] = _array[i];
+                    q++;
+                }
+            }
+            _counter = newArray.Length;
+            _array = newArray;
         }
         // Проверка, есть ли элемент в списке.
         public bool Contains(int item) 

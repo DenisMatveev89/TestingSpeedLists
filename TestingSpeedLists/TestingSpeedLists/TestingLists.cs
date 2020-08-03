@@ -18,9 +18,6 @@ namespace TestingSpeedLists
         }
         public void AddFirst(string[,] arrayRes, int val, int[] array1, int[] array2, int[] array3)
         {
-
-            Console.WriteLine("Creating Lists...................");
-
             ArrayList aList1 = new ArrayList(array1);
             ArrayList aList2 = new ArrayList(array2);
             ArrayList aList3 = new ArrayList(array3);
@@ -93,8 +90,6 @@ namespace TestingSpeedLists
         }
         public void AddFirst(string[,] arrayRes, int[] array, int[] array1, int[] array2, int[] array3)
         {
-            Console.WriteLine("Creating Lists...................");
-
             ArrayList aList1 = new ArrayList(array1);
             ArrayList aList2 = new ArrayList(array2);
             ArrayList aList3 = new ArrayList(array3);
@@ -165,8 +160,6 @@ namespace TestingSpeedLists
 
         public void AddLast(string[,] arrayRes, int val, int[] array1, int[] array2, int[] array3)
         {
-            Console.WriteLine("Creating Lists...................");
-
             ArrayList aList1 = new ArrayList(array1);
             ArrayList aList2 = new ArrayList(array2);
             ArrayList aList3 = new ArrayList(array3);
@@ -235,8 +228,6 @@ namespace TestingSpeedLists
         }
         public void AddLast(string[,] arrayRes, int[] arrayTest, int[] array1, int[] array2, int[] array3)
         {
-            Console.WriteLine("Creating Lists...................");
-
             ArrayList aList1 = new ArrayList(array1);
             ArrayList aList2 = new ArrayList(array2);
             ArrayList aList3 = new ArrayList(array3);
@@ -512,8 +503,6 @@ namespace TestingSpeedLists
         }
         public void RemoveLast(string[,] arrayRes, int[] array1, int[] array2, int[] array3)
         {
-            Console.WriteLine("Creating Lists...................");
-
             ArrayList aList1 = new ArrayList(array1);
             ArrayList aList2 = new ArrayList(array2);
             ArrayList aList3 = new ArrayList(array3);
@@ -682,7 +671,6 @@ namespace TestingSpeedLists
             arrayRes[7, 10] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
             Console.WriteLine("ok...");
-            Console.WriteLine("ArrayList RemoveAll  FINISH...");
 
             Console.WriteLine("LinkedList RemoveAll 100 start...");
             sw.Start();
@@ -705,7 +693,6 @@ namespace TestingSpeedLists
             arrayRes[8, 10] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
             Console.WriteLine("ok...");
-            Console.WriteLine("LinkedList RemoveAll  FINISH...");
             Console.WriteLine("DoubleLinkedList RemoveAll 100 start...");
             sw.Start();
             dList1.RemoveAll(val);
@@ -727,7 +714,6 @@ namespace TestingSpeedLists
             arrayRes[9, 10] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
             Console.WriteLine("ok...");
-            Console.WriteLine("DoubleLinkedList RemoveAll FINISH...");
             Console.WriteLine("RemoveAll.............................\t done");
         }
         public void Contains(string[,] arrayRes, int val, int[] array1, int[] array2, int[] array3)
