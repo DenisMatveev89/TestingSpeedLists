@@ -18,9 +18,6 @@ namespace TestingSpeedLists
         }
         public void AddFirst(string[,] arrayRes, int val, int[] array1, int[] array2, int[] array3)
         {
-
-            Console.WriteLine("Creating Lists...................");
-
             ArrayList aList1 = new ArrayList(array1);
             ArrayList aList2 = new ArrayList(array2);
             ArrayList aList3 = new ArrayList(array3);
@@ -93,8 +90,6 @@ namespace TestingSpeedLists
         }
         public void AddFirst(string[,] arrayRes, int[] array, int[] array1, int[] array2, int[] array3)
         {
-            Console.WriteLine("Creating Lists...................");
-
             ArrayList aList1 = new ArrayList(array1);
             ArrayList aList2 = new ArrayList(array2);
             ArrayList aList3 = new ArrayList(array3);
@@ -165,8 +160,6 @@ namespace TestingSpeedLists
 
         public void AddLast(string[,] arrayRes, int val, int[] array1, int[] array2, int[] array3)
         {
-            Console.WriteLine("Creating Lists...................");
-
             ArrayList aList1 = new ArrayList(array1);
             ArrayList aList2 = new ArrayList(array2);
             ArrayList aList3 = new ArrayList(array3);
@@ -235,8 +228,6 @@ namespace TestingSpeedLists
         }
         public void AddLast(string[,] arrayRes, int[] arrayTest, int[] array1, int[] array2, int[] array3)
         {
-            Console.WriteLine("Creating Lists...................");
-
             ArrayList aList1 = new ArrayList(array1);
             ArrayList aList2 = new ArrayList(array2);
             ArrayList aList3 = new ArrayList(array3);
@@ -512,8 +503,6 @@ namespace TestingSpeedLists
         }
         public void RemoveLast(string[,] arrayRes, int[] array1, int[] array2, int[] array3)
         {
-            Console.WriteLine("Creating Lists...................");
-
             ArrayList aList1 = new ArrayList(array1);
             ArrayList aList2 = new ArrayList(array2);
             ArrayList aList3 = new ArrayList(array3);
@@ -575,7 +564,7 @@ namespace TestingSpeedLists
             sw.Stop();
             arrayRes[9, 8] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
-            Console.WriteLine("RemoveLast....................\t done");
+            Console.WriteLine("RemoveLast........................\t done");
         }
         public void RemoveAt(string[,] arrayRes, int[] array1, int[] array2, int[] array3)
         {
@@ -682,7 +671,6 @@ namespace TestingSpeedLists
             arrayRes[7, 10] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
             Console.WriteLine("ok...");
-            Console.WriteLine("ArrayList RemoveAll  FINISH...");
 
             Console.WriteLine("LinkedList RemoveAll 100 start...");
             sw.Start();
@@ -705,7 +693,6 @@ namespace TestingSpeedLists
             arrayRes[8, 10] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
             Console.WriteLine("ok...");
-            Console.WriteLine("LinkedList RemoveAll  FINISH...");
             Console.WriteLine("DoubleLinkedList RemoveAll 100 start...");
             sw.Start();
             dList1.RemoveAll(val);
@@ -727,7 +714,6 @@ namespace TestingSpeedLists
             arrayRes[9, 10] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
             Console.WriteLine("ok...");
-            Console.WriteLine("DoubleLinkedList RemoveAll FINISH...");
             Console.WriteLine("RemoveAll.............................\t done");
         }
         public void Contains(string[,] arrayRes, int val, int[] array1, int[] array2, int[] array3)
@@ -1541,21 +1527,21 @@ namespace TestingSpeedLists
 
             Console.WriteLine("ArrayList sort 100 start...");
             sw.Start();
-            aList1.Sort(array1);
+            aList1.Sort();
             sw.Stop();
             arrayRes[1, 24] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
             Console.WriteLine("ok...");
             Console.WriteLine("ArrayList sort 10 000 start...");
             sw.Start();
-            aList2.Sort(array2);
+            aList2.Sort();
             sw.Stop();
             arrayRes[4, 24] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
             Console.WriteLine("ok...");
             Console.WriteLine("ArrayList sort 1 000 000 start...");
             sw.Start();
-            aList3.Sort(array3);
+            aList3.Sort();
             sw.Stop();
             arrayRes[7, 24] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
@@ -1569,45 +1555,45 @@ namespace TestingSpeedLists
             arrayRes[3, 24] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
             Console.WriteLine("ok...");
-            Console.WriteLine("DoubleLinkedList 10 000 sort start...");
-            sw.Start();
-            dList2.Head = dList2.Sort(dList2.Head);
-            sw.Stop();
-            arrayRes[6, 24] = sw.Elapsed.TotalMilliseconds.ToString();
-            sw.Reset();
-            Console.WriteLine("ok...");
-            Console.WriteLine("DoubleLinkedList 1 000 000 sort start...");
-            sw.Start();
-            dList3.Head = dList3.Sort(dList3.Head);
-            sw.Stop();
-            arrayRes[9, 24] = sw.Elapsed.TotalMilliseconds.ToString();
-            sw.Reset();
-            Console.WriteLine("ok...");
-            Console.WriteLine("DoubleLinkedList sort FINISH...");
+            //Console.WriteLine("DoubleLinkedList 10 000 sort start...");
+            //sw.Start();
+            //dList2.Head = dList2.Sort(dList2.Head);
+            //sw.Stop();
+            //arrayRes[6, 24] = sw.Elapsed.TotalMilliseconds.ToString();
+            //sw.Reset();
+            //Console.WriteLine("ok...");
+            //Console.WriteLine("DoubleLinkedList 1 000 000 sort start...");
+            //sw.Start();
+            //dList3.Head = dList3.Sort(dList3.Head);
+            //sw.Stop();
+            //arrayRes[9, 24] = sw.Elapsed.TotalMilliseconds.ToString();
+            //sw.Reset();
+            //Console.WriteLine("ok...");
+            //Console.WriteLine("DoubleLinkedList sort FINISH...");
 
-            Console.WriteLine("LinkedList sort start...");
+            Console.WriteLine("LinkedList sort 100 start...");
             sw.Start();
             lList1.Head = lList1.Sort(lList1.Head);
             sw.Stop();
             arrayRes[2, 24] = sw.Elapsed.TotalMilliseconds.ToString();
             sw.Reset();
             Console.WriteLine("ok...");
-            Console.WriteLine("LinkedList sort 100 ok...");
-            sw.Start();
-            lList2.Head = lList2.Sort(lList2.Head);
-            sw.Stop();
-            arrayRes[5, 24] = sw.Elapsed.TotalMilliseconds.ToString();
-            sw.Reset();
-            Console.WriteLine("ok...");
-            Console.WriteLine("LinkedList sort 10 000 ok...");
-            sw.Start();
-            lList3.Head = lList3.Sort(lList3.Head);
-            sw.Stop();
-            arrayRes[8, 24] = sw.Elapsed.TotalMilliseconds.ToString();
-            sw.Reset();
-            Console.WriteLine("ok...");
-            Console.WriteLine("LinkedList sort 1 000 000 ok...");
-            Console.WriteLine("LinkedList sort FINISH...");
+            //Console.WriteLine("LinkedList sort 10 000 start...");
+            //sw.Start();
+            //lList2.Head = lList2.Sort(lList2.Head);
+            //sw.Stop();
+            //arrayRes[5, 24] = sw.Elapsed.TotalMilliseconds.ToString();
+            //sw.Reset();
+            //Console.WriteLine("ok...");
+            //Console.WriteLine("LinkedList sort 10 000 ok...");
+            //sw.Start();
+            //lList3.Head = lList3.Sort(lList3.Head);
+            //sw.Stop();
+            //arrayRes[8, 24] = sw.Elapsed.TotalMilliseconds.ToString();
+            //sw.Reset();
+            //Console.WriteLine("ok...");
+            //Console.WriteLine("LinkedList sort 1 000 000 ok...");
+            //Console.WriteLine("LinkedList sort FINISH...");
 
             Console.WriteLine("Sort.............................\t done");
         }

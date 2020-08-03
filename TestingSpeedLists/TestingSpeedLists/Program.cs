@@ -9,9 +9,9 @@ namespace TestingSpeedLists
             string[,] arrayRes = new string[10, 25];
             Helpers hp = new Helpers();
             int[] arrayTest = new int[] { 1, 2, 3, 4, 56, 7, 8, 9, 5, 3, 2, 1, 4, 6, 7, 8 };
-            int[] array1 = hp.GetArray(100, 0, 25);
-            int[] array2 = hp.GetArray(100000, 0, 25);
-            int[] array3 = hp.GetArray(1000000, 0, 25);
+            int[] array1 = hp.GetArray(100, -10, 24);
+            int[] array2 = hp.GetArray(100000, -10, 24);
+            int[] array3 = hp.GetArray(1000000, -10, 24);
             Console.WriteLine("\n*************************************************************************************************************************************************");
             Console.WriteLine("Random lists creation - complete...");
             Console.WriteLine("\n*************************************************************************************************************************************************");
@@ -63,8 +63,8 @@ namespace TestingSpeedLists
             test.RemoveFirst(arrayRes, array1, array2, array3);
             test.RemoveLast(arrayRes, array1, array2, array3);
             test.RemoveAt(arrayRes, array1, array2, array3);
-            //test.RemoveAll(arrayRes, 21, array1, array2, array3);
-            test.Contains(arrayRes, 0, array1, array2, array3);
+            test.RemoveAll(arrayRes, 12, array1, array2, array3);
+            test.Contains(arrayRes, 12, array1, array2, array3);
             test.Get(arrayRes, 12, array1, array2, array3);
             test.GetFirst(arrayRes, array1, array2, array3);
             test.GetLast(arrayRes, array1, array2, array3);

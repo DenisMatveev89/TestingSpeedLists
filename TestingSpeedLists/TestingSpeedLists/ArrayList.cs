@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace TestingSpeedLists
@@ -193,28 +194,41 @@ namespace TestingSpeedLists
         // Удаление элемента из массива по индексу.
         public void RemoveAt(int index) 
         {
-
             if (index < _counter)
             {
                 _counter--;
 
                 ShiftLeft(_array, _array, index);
             }
-            else
-            {
-                Console.WriteLine($"\nИндекса {index} для удаления не существует в этом массиве");
-            }
+            //else
+            //{
+            //    Console.WriteLine($"\nИндекса {index} для удаления не существует в этом массиве");
+            //}
         }
         // Удалить все элементы из массива, равные val.
         public void RemoveAll(int item) 
         {
+            int j = 0;
+            int count = 0;
             for (int i = 0; i < _counter; i++)
             {
                 if (item == _array[i])
                 {
-                    RemoveAt(i);
+                    j++;
                 }
             }
+            int[] newArray = new int[_counter - j];
+            int q = 0;
+            for (int i = 0; i < _counter; i++)
+            {
+                if (item != _array[i])
+                {
+                    newArray[q] = _array[i];
+                    q++;
+                }
+            }
+            _counter = newArray.Length;
+            _array = newArray;
         }
         // Проверка, есть ли элемент в списке.
         public bool Contains(int item) 
@@ -346,41 +360,50 @@ namespace TestingSpeedLists
             }
             return min;
         }
-        // Сортировка по возрастанию.
+        private void Swap(int a, int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
+        // Сортировка по возрастанию (Алгоритм Шелла).
         public void Sort()
         {
-            int temp;
-            for (int i = 0; i < _counter - 1; i++)
+            int d = _counter / 2;
+            while (d >= 1)
             {
-                for (int j = i + 1; j < _counter; j++)
+                for (int i = d; i < _counter; i++)
                 {
-                    if (_array[i] > _array[j])
+                    int j = i;
+                    while ((j >= d) && (_array[j - d] > _array[j]))
                     {
-                        temp = _array[i];
-                        _array[i] = _array[j];
-                        _array[j] = temp;
+                        Swap(_array[j], _array[j - d]);
+                        j = j - d;
                     }
                 }
+
+                d = d / 2;
             }
         }
-      
-        // Сортировка по убыванию.
-        public void SortDesc() 
+        // Сортировка по убыванию (Алгоритм Шелла).
+        public void SortDesc()
         {
-            int temp;
-            for (int i = 0; i < _counter - 1; i++)
+            int d = _counter / 2;
+            while (d >= 1)
             {
-                for (int j = i + 1; j < _counter; j++)
+                for (int i = d; i < _counter; i++)
                 {
-                    if (_array[i] < _array[j])
+                    int j = i;
+                    while ((j >= d) && (_array[j - d] < _array[j]))
                     {
-                        temp = _array[i];
-                        _array[i] = _array[j];
-                        _array[j] = temp;
+                        Swap(_array[j], _array[j - d]);
+                        j = j - d;
                     }
                 }
-            }
 
+                d = d / 2;
+            }
         }
         // Вывод списка в консоль.
         public void PrintArrayList()
